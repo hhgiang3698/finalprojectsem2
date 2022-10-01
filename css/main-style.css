@@ -54,6 +54,7 @@ body{
 	font-size: 1.5rem;
 }
 
+
 .hoverable{
   display:inline-block;
   backface-visibility: hidden;
@@ -479,21 +480,50 @@ footer i{
 	
 }
 
-#circle {
+.circle {
 	/* background: #cfcfcf;
 	width: 2rem;
 	height: 128px; */
 	border-radius: 50%;
-	border: 3px solid rgba(246, 235, 222,1);
-	padding:0.5rem;
+	border: 2px solid rgba(246, 235, 222,1);
+	padding:1rem;
   }
+/*
+	#discovery-slider .hover-circle{
+		transition: 1s box-shadow;
+	}
+*/
 
+#discovery-slider .hover-circle:hover{
+	border: 5px solid #FF6000;
+	transition: all ease 0.3s;
+}
 
 
 #discovery-slider .swiper-slide h1{
 	font-family: Geomanist-Medium;
+	font-size:3rem;
+	margin:0px;
 }
 
+#discovery-slider .swiper-slide p{
+	font-size:1rem;
+}
+
+#discovery-slider .mySwiper .swiper-pagination{
+	bottom: 2rem;
+}
+
+#discovery-slider .mySwiper .swiper-pagination-bullet{
+	opacity: 1;
+	background-color: #707070;
+	width: .55rem;
+	height: .55rem;
+}
+
+#discovery-slider .mySwiper .swiper-pagination-bullet-active{
+	background-color: var(--bs-primary);
+}
 
 
 
