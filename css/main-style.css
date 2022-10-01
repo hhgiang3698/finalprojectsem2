@@ -1,0 +1,527 @@
+@charset "utf-8";
+/* css document */
+
+@font-face { font-family: Geomanist-Regular; src: url("../fonts/Geomanist-Regular.otf") format("opentype") } 
+@font-face { font-family: Geomanist-Bold; src: url("../fonts/Geomanist-Bold.otf") format("opentype");}
+@font-face { font-family: Geomanist-Medium; src: url("../fonts/Geomanist-Medium.otf") format("opentype");}
+@font-face {
+	font-family: Geomanist-Light;
+	src: url("../fonts/Geomanist-Light.otf") format("opentype");
+}
+
+body{
+	margin:0;
+	padding:0;
+	background-color: #282827; 
+	font-family: Geomanist-Regular;
+	
+}
+
+
+.user-name{
+	font-family: Geomanist-Bold !important;
+}
+
+.small-dot{
+	font-size: 0.2rem;
+	margin: 0.6rem;
+}
+
+.small-arrow{
+	font-size: 0.9rem;
+	margin: 0.1rem 0.5rem;
+}
+
+.active-rating{
+	fill:#FF6000;
+	stroke: #FF6000;
+}
+.active{
+	stroke: #FF6000;
+}
+
+.navbar{
+	color:#FDF8F2;
+}
+
+.icon i{
+	font-size:1.5rem;
+}
+
+#theMENU a{
+	font-family: Geomanist-Light;
+/*	text-transform: uppercase;*/
+	font-size: 1.5rem;
+}
+
+.hoverable{
+  display:inline-block;
+  backface-visibility: hidden;
+  vertical-align: middle;
+  position:relative;
+/*  box-shadow: 0 0 1px rgba(0,0,0,0);*/
+  transform: translateZ(0);
+  transition-duration: .3s;
+  transition-property:transform;
+}
+
+.hoverable:before{
+  position:absolute;
+  pointer-events: none;
+  z-index:-1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height:3px;
+  width:90%;
+  opacity:0;
+  background: -webkit-radial-gradient(center, circle, rgba(255,96,0,1) 0%, rgba(255,96,0, 1) 80%);
+  background: radial-gradient(circle at center, rgba(255,96,0, 1) 0%, rgba(255,96,0, 1) 80%);
+  /* W3C */
+  transition-duration: 0.3s;
+  transition-property: transform, opacity;
+}
+
+.hoverable:hover, .hoverable:active, .hoverable:focus{
+  transform: translateY(-5px);
+}
+.hoverable:hover:before, .hoverable:active:before, .hoverable:focus:before{
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.search-space{
+	border: #FDF8F2 solid 1px;
+	border-radius: 30px;
+}
+
+.search-space input{
+	background: transparent;
+	border:none;
+}
+
+.search-space i{
+	font-size: 1.2rem;
+}
+.search-space input::-webkit-input-placeholder { /* Edge */
+  	color: #FDF8F2;
+	opacity: 0.2;
+}
+
+.search-space input::placeholder {
+  	color: #FDF8F2;
+	opacity: 0.2;
+	font-family: Geomanist-Light;
+	font-size: 1.2rem;
+}
+
+.search-space input[type=search] {
+	width:80%;
+  padding: 0px 20px;
+/*  margin: 8px 0;*/
+  box-sizing: border-box;
+  color:#FDF8F2;
+
+}
+
+.search-space input[type=search]:focus{
+	outline:none;
+}
+
+/*------mySwiper-----*/
+#index-swiper .mySwiper{
+	height:auto;
+}
+
+#index-swiper  .mySwiper .swiper-wrapper{
+	align-items:center;
+}
+
+#index-swiper  .mySwiper .swiper-slide-active{
+	transform: scale(1.5);
+	transition:.4s;
+}
+
+#index-swiper .mySwiper .swiper-pagination{
+	bottom: 2rem;
+}
+
+#index-swiper .mySwiper .swiper-pagination-bullet{
+	opacity: 1;
+	background-color: #707070;
+	width: .55rem;
+	height: .55rem;
+}
+
+#index-swiper .mySwiper .swiper-pagination-bullet-active{
+	background-color: var(--bs-primary);
+}
+
+#index-swiper .mySwiper .swiper-custom-btn-nav{
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 0 35rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#index-swiper .mySwiper .swiper-custom-btn-nav svg:hover >path{
+	stroke:#FF6000;
+}
+
+#index-swiper .mySwiper .swiper-slide figure{
+	margin:0;
+	position:relative;
+	overflow: hidden;
+}
+
+#index-swiper .mySwiper .swiper-slide figcaption{
+	position:absolute;
+	top:40%;
+	left:17%;
+}
+
+#index-swiper .mySwiper .swiper-slide figure figcaption .rating{
+	font-family: Geomanist-Regular;
+	font-size:0.8rem;
+	color: #FF6000;
+	vertical-align: middle;
+}
+
+/* TOP REVIEW */
+
+#top-review img{
+	width:100%;
+	height:330px;
+	object-fit: cover;
+	border-radius: 0.8rem;
+}
+
+
+#top-review .number-top-review {
+	font-size: 11.5rem;
+}
+
+
+#top-review .glass-top-review h4,h6{
+	font-family: Geomanist-Regular;
+	font-weight: lighter;
+	margin-bottom: 0;	
+}
+
+#top-review .glass-top-review p{
+	font-size: 0.8rem;
+	white-space: nowrap;
+	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+
+#top-review .item,.item-2{
+	padding: 0 0.6rem;
+	position: relative;
+}
+
+#top-review .item h1{
+	position: absolute;
+	top:-7rem;
+	right:2.5rem;
+}
+
+#top-review .glass-top-review{
+	position: absolute;
+	bottom: 0.8rem;
+	width: 90%;
+	left:1.5rem;
+
+	align-items: baseline;
+	border:rgba(253, 248, 242,.5) solid 2px;
+	border-radius: 20px;
+	background-color: rgba(253, 248, 242,.5);
+	backdrop-filter:blur(10px);
+	box-shadow: 5px 4px 6px 2px rgba(40, 40, 39,.2);
+}
+
+#top-review .item-2 h2{
+	font-size: 4.5rem;
+}
+
+
+#top-review .item-2 p{
+	font-size: 0.8rem;
+	color:#FDF8F2;
+	white-space: nowrap;
+	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+
+#top-review .glass-top-review,.item-2	 a{
+	text-decoration: none;
+}
+
+/*sort*/
+
+#sort h4{
+	font-family: Geomanist-Regular;
+	font-weight: lighter;
+}
+
+#sort i{
+	line-height: 1.4;
+	font-size: 1.5rem;
+}
+
+#sort .i-border{
+	border-left: 2px solid #FDF8F2;
+	padding-left: 1rem;
+}
+
+#sort .theSORT{
+	border: 2px solid #FDF8F2 ;
+	border-radius: 20px;
+	
+}
+
+#sort .theSORT i:hover{
+	transform: translateY(3px);
+	transition: ease 0.3s;
+}
+
+
+/*catergories*/
+#catergories svg:hover >path{
+	fill:#FF6000;
+}
+
+#catergories a:hover> h4{
+	color: #FF6000;
+}
+
+#catergories a{
+	text-decoration: none;
+	color: #FDF8F2;
+	
+}
+
+#catergories a h4{
+	font-family: Geomanist-Regular;
+	padding-top: 1.5rem;
+}
+
+/*weekly hot*/
+#weekly-hot .button-hot-item {
+	border-radius: 20px;
+	border: #FF6000 solid 1px;
+	background-color: transparent;
+	color: #FDF8F2;
+	font-family: Geomanist-Regular;
+	font-weight: lighter;
+	padding: 0.1rem 1.5rem;
+	margin: 1.5rem 1rem;
+}
+
+#weekly-hot .weekly-hot-btn{
+	min-height: 320px;
+}
+
+#weekly-hot img {
+	vertical-align: middle;
+	border-radius: 11px;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  #weekly-hot  .gallery{
+	position: relative;
+  }
+
+  #weekly-hot  .gallery-2{
+	position: relative;
+  }
+  
+  /* Hide the images by default */
+  #weekly-hot  .innerGallery{
+	display: none;
+  }
+  #weekly-hot  .innerGallery-2 {
+	display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  #weekly-hot .cursor {
+	cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  #weekly-hot  .prev,.prev-2 {
+	cursor: pointer;
+	position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 20;
+	left:1.8rem;
+    display: flex;
+	user-select: none;
+	-webkit-user-select: none;
+  }
+
+  #weekly-hot  .next,.next-2 {
+	cursor: pointer;
+	position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 20;
+	right:1.8rem;
+    display: flex;
+	user-select: none;
+	-webkit-user-select: none;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  #weekly-hot .prev svg:hover >path {
+	stroke:#FF6000;
+}
+#weekly-hot .next svg:hover >path {
+	stroke:#FF6000;
+}
+  
+  /* Number text (1/3 etc) */
+  #weekly-hot .numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+  }
+  
+  #weekly-hot .active,
+  .nav-arrow:hover {
+	opacity: 1;
+  }
+
+#weekly-hot .gallery-info p,i{
+	font-family: Geomanist-Light;
+	font-size: 1rem;
+}
+
+#weekly-hot .gallery-info h3,h4{
+	font-family: Geomanist-Light;
+}
+
+#weekly-hot .gallery-info .btn{
+	font-family: Geomanist-Light;
+	padding: 0.7rem 3rem;
+}
+
+/* footer */
+
+footer{
+	min-height: 350px;
+
+}
+
+footer hr{
+	margin-top: 12rem;
+	border: 1px solid #F6EBDE;
+	opacity: 0.8;
+}
+
+footer a{
+	text-decoration: none;
+	color:#F6EBDE;
+}
+footer h6{
+	padding-top: 0.4rem;
+}
+
+footer a:hover{
+	color:#FF6000;
+}
+
+footer i{
+	font-size:2rem;
+}
+
+
+/* ---------------------- discovery examples ------------------------ */
+
+#discovery-slider .swiper {
+	width: 100%;
+	height: 100%;
+}
+
+#discovery-slider  .swiper-slide{
+	text-align: center;
+	/* font-size: 18px; */
+	/* background: #fff; */
+
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+#discovery-slider .swiper-slide img {
+	display: block;
+	width: 100%;
+	/* height: 100%;
+	object-fit: cover; */
+	
+}
+
+#circle {
+	/* background: #cfcfcf;
+	width: 2rem;
+	height: 128px; */
+	border-radius: 50%;
+	border: 3px solid rgba(246, 235, 222,1);
+	padding:0.5rem;
+  }
+
+
+
+#discovery-slider .swiper-slide h1{
+	font-family: Geomanist-Medium;
+}
+
+
+
+
+/* -------------------ipad-------------------- */
+@media (max-width:1024px){
+
+}
+
+/* iphone */
+@media (max-width:500px){
+	.mySwiper{
+		min-height:200px;
+		padding-top: 3rem;
+	}
+	.mySwiper .swiper-slide-active{
+		transform: scale(1.8);
+		transition:.4s;
+	}
+
+	.mySwiper .swiper-pagination{
+		bottom: 0.3rem;
+	}
+	.mySwiper .swiper-pagination-bullet{
+		width: .3rem;
+		height: .3rem;
+	}
+	
+	.mySwiper .swiper-custom-btn-nav{
+		display:none;
+	}
+}
