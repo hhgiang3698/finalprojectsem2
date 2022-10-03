@@ -1384,11 +1384,11 @@
   content: "";
   position: absolute;
   z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #2098D1;
+  top: -5%;
+  left: -10%;
+  right: -10%;
+  bottom: 10%;
+  background: #FF6000;
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50% 100%;
@@ -1401,7 +1401,7 @@
   transition-timing-function: ease-out;
 }
 .hvr-sweep-to-top:hover, .hvr-sweep-to-top:focus, .hvr-sweep-to-top:active {
-  color: white;
+  color: #FDF8F2;
 }
 .hvr-sweep-to-top:hover:before, .hvr-sweep-to-top:focus:before, .hvr-sweep-to-top:active:before {
   -webkit-transform: scaleY(1);
@@ -2178,7 +2178,7 @@
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  /* box-shadow: 0 0 1px rgba(0, 0, 0, 0); */
   position: relative;
   overflow: hidden;
 }
@@ -2188,8 +2188,8 @@
   z-index: -1;
   left: 51%;
   right: 51%;
-  bottom: 0;
-  background: #E83E33;
+  bottom: 10%;
+  background: #FF6000;
 /*	chỗ này có chỉnh sửa*/
   height: 4px;
   -webkit-transition-property: left, right;
