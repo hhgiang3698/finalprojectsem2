@@ -1,76 +1,83 @@
-var swiper = new Swiper(".mySwiper", { 
+var swiper = new Swiper(".mySwiper", {
   //   slidesPerView: 3,
   // //		 slidesPerGroup:3,
   //     spaceBetween: 260,
-      centeredSlides:true,
+  centeredSlides: true,
   //		grabCursor:true,
-      loop: true,
+  loop: true,
   //      loopFillGroupWithBlank: true,
-    autoplay: {
-      delay:3500,
+  autoplay: {
+      delay: 3500,
       disableOnInteration: false,
+  },
+  pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+  },
+  navigation: {
+      nextEl: "#btn-next",
+      prevEl: "#btn-prev",
+  },
+
+  breakpoints: {
+      300: {
+          slidesPerView: 2,
+          spaceBetween: 80,
       },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: "#btn-next",
-        prevEl: "#btn-prev",
-      },
-  
-      breakpoints: {
-        300: {
-            slidesPerView: 2,
-            spaceBetween: 80,
-        },
-        1400: {
-            slidesPerView: 2.5,
-            spaceBetween: 220,
-        }
-    }
-  });
-  
-  $(document).ready(function () {
-      $("ul.navbar-nav > li > a").click(
-        function (e) {
+      1400: {
+          slidesPerView: 2.5,
+          spaceBetween: 220,
+      }
+  }
+});
+
+$(document).ready(function () {
+  $("ul.navbar-nav > li > a").click(
+      function (e) {
           $("ul.navbar-nav > li").removeClass(
-            "active");
+              "active");
           $("ul.navbar-nav > li > a").css(
-            "color", "");
-  
+              "color", "");
+
           $(this).addClass("active");
           $(this).css("color", "#FF6000");
       });
-  });
-  
+});
 
-  let slideIndex = 1;
-  showSlides(slideIndex);
-  
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-  
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-  
-  function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("innerGallery");
-    let dots = document.getElementsByClassName("nav-arrow");
-    // let captionText = document.getElementById("caption");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt;
-  }
-  
+function plusSlides(button, offset) {
+  let innerGallery = $(button).parent().parent();
+  let bigImage = innerGallery.find(".big-image .image");
+  let images = bigImage.find("img");
+  let nImage = images.length;
+  let activedImage = images.filter(function(){
+      return $(this).css("display") == "block";
+  })
+  var currentIndex = images.index(activedImage);
+  currentIndex += offset;
+  if (currentIndex >= nImage)
+      currentIndex = 0;
+  setImageGalleryIndex(innerGallery, currentIndex);
+}
+
+function setImageGalleryIndex(innerGallery, index){
+  let bigImage = innerGallery.find(".big-image .image");
+  let images = bigImage.find("img").css("display", "none");
+  images.eq(index).css("display", "block")
+
+  let thumbnailImages = innerGallery.find(".thumbnail img");
+  thumbnailImages.removeClass("active");
+  thumbnailImages.eq(index).addClass("active");
+
+  let nImage = images.length;
+  innerGallery.find(".numbertext").text(`${index + 1}/${nImage}`);
+}
+
+function showImage(image){
+  image = $(image);
+  if (image.hasClass("active"))
+      return;
+  let innerGallery = image.parent().parent();
+  let index = innerGallery.find(".thumbnail img").index(image);
+  console.log("index", index);
+  setImageGalleryIndex(innerGallery, index);
+}
